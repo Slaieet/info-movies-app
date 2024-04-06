@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #fafafa;
+}
+
+body {
+  background: #20252C;
+  padding: 0 5%;
+}
+
+input {
+  outline: none;
+}
