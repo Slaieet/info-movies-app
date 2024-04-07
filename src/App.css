@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   color: #fafafa;
+  font-family: sans-serif;
 }
 
 body {
@@ -12,4 +13,17 @@ body {
 
 input {
   outline: none;
+}
+
+.search-bar {
+  transition: border 0.2s;
+}
+
+.movies-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-items: center;
+  column-gap: 20px;
+  row-gap: 40px;
+  margin-top: 20px;
 }
