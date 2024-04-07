@@ -1,9 +1,12 @@
-export default function MovieCard () {
+export default function MovieCard ({ title, qualification, imgEndpoint }) {
   return (
-    <div className='w-[300px]'>
+    <div
+      className='w-[300px] cursor-pointer movie-card border-[3px] border-transparent hover:border-darktext
+      rounded-[12px]'
+    >
       <header>
         <img
-          src='https://image.tmdb.org/t/p/w1280/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg'
+          src={`https://image.tmdb.org/t/p/w1280${imgEndpoint}`}
           alt='movie'
           className='w-full h-[420px] object-cover rounded-t-[10px]'
           loading='lazy'
@@ -12,8 +15,8 @@ export default function MovieCard () {
       <footer
         className='h-[100px] bg-darkbgTwo rounded-b-[10px] flex items-center justify-between px-5'
       >
-        <h6 className='font-bold text-[1.2rem]'>Kung Fu Panda 4</h6>
-        <p className='px-2 py-1 bg-darkbg text-[#ffa500] font-bold'>6.7</p>
+        <h6 className='font-bold text-[1.2rem]'>{title}</h6>
+        <p className='px-2 py-1 bg-darkbg text-[#ffa500] font-bold'>{qualification}</p>
       </footer>
     </div>
   )

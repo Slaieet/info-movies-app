@@ -27,3 +27,7 @@ input {
   row-gap: 40px;
   margin-top: 20px;
 }
+
+.movie-card {
+  transition: border-color 0.2s;
+}
