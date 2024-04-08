@@ -1,5 +1,3 @@
-import './App.css'
-
 import Headerr from './components/Headerr'
 import MoviesSection from './components/MoviesSection'
 

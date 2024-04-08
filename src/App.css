@@ -8,7 +8,7 @@
 
 body {
   background: #20252C;
-  padding: 0 5%;
+  padding: 0 6%;
 }
 
 input {
@@ -21,8 +21,8 @@ input {
 
 .movies-section {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  justify-items: center;
+  grid-template-columns: repeat(auto-fill, 300px);
+  justify-content: space-between;
   column-gap: 20px;
   row-gap: 40px;
   margin-top: 20px;
@@ -30,4 +30,33 @@ input {
 
 .movie-card {
   transition: border-color 0.2s;
+}
+
+@media (width < 1070px) {
+  .movies-section {
+    justify-content: space-evenly;
+  }
+}
+
+@media (width < 400px) {
+
+  .movies-section {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .movie-card {
+    width: 90% !important;
+  }
+
+  .movie-card_footer {
+    height: auto;
+    padding: 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .movie-card_footer > h6 {
+    text-align: center;
+  }
 }

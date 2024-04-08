@@ -1,3 +1,5 @@
+import { IMG_PATH } from '../../logic/constants'
+
 export default function MovieCard ({ title, qualification, imgEndpoint }) {
   return (
     <div
@@ -6,14 +8,14 @@ export default function MovieCard ({ title, qualification, imgEndpoint }) {
     >
       <header>
         <img
-          src={`https://image.tmdb.org/t/p/w1280${imgEndpoint}`}
+          src={IMG_PATH + imgEndpoint}
           alt='movie'
           className='w-full h-[420px] object-cover rounded-t-[10px]'
           loading='lazy'
         />
       </header>
       <footer
-        className='h-[100px] bg-darkbgTwo rounded-b-[10px] flex items-center justify-between px-5'
+        className='h-[100px] bg-darkbgTwo rounded-b-[10px] flex items-center justify-between px-5 movie-card_footer'
       >
         <h6 className='font-bold text-[1.2rem]'>{title}</h6>
         <p className='px-2 py-1 bg-darkbg text-[#ffa500] font-bold'>{qualification}</p>
