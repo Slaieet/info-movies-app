@@ -1,17 +1,12 @@
 import MovieCard from './subcomponents/MovieCard'
 import MovieInfo from './subcomponents/MovieInfo'
-import { useExtractMoviesInfo } from '../customHooks/extractMoviesInfo'
-import { useState } from 'react'
+import { useExtractMoviesInfo } from '../customHooks/useExtractMoviesInfo.js'
+import { useExtractFullInfo } from '../customHooks/useExtractFullInfo.js'
 
 export default function MoviesSection () {
-  const { moviesToRender } = useExtractMoviesInfo()
+  const { moviesToRender, genres } = useExtractMoviesInfo()
 
-  // const [showInfo, setShowInfo] = useState(false)
-  // const [info, setInfo] = useState('')
-
-  // const changeShowInfo = ({ info }) => {
-
-  // }
+  const { showInfo, info, changeShowInfo } = useExtractFullInfo({ moviesToRender, genres })
 
   return (
     <section className='movies-section'>
@@ -20,15 +15,17 @@ export default function MoviesSection () {
               return (
                 <MovieCard
                   key={movie.id}
+                  id={movie.id}
                   title={movie.title}
                   qualification={movie.vote_average}
                   imgEndpoint={movie.poster_path}
+                  changeShowInfo={changeShowInfo}
                 />
               )
             })}
 
-      {/* {showInfo &&
-        <MovieInfo />} */}
+      {showInfo &&
+        <MovieInfo info={info} />}
 
     </section>
   )

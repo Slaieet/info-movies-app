@@ -1,10 +1,11 @@
 import { IMG_PATH } from '../../logic/constants'
 
-export default function MovieCard ({ title, qualification, imgEndpoint }) {
+export default function MovieCard ({ title, qualification, imgEndpoint, changeShowInfo, id }) {
   return (
     <div
       className='w-[300px] cursor-pointer movie-card border-[3px] border-transparent hover:border-darktext
       rounded-[12px]'
+      onClick={() => changeShowInfo({ id })}
     >
       <header>
         <img
