@@ -25,7 +25,7 @@ export default function MoviesSection () {
             })}
 
       {showInfo &&
-        <MovieInfo info={info} />}
+        <MovieInfo info={info} changeShowInfo={changeShowInfo} />}
 
     </section>
   )

@@ -61,11 +61,6 @@ input {
   }
 }
 
-#root {
-  overflow: hidden;
-  height: 100vh;
-}
-
 @media (width < 1000px) {
   .cage-movie-info {
     height: auto;
@@ -99,5 +94,9 @@ input {
 
   .vote-average {
     align-self: flex-start;
+  }
+
+  .poster {
+    border-radius: 12px 12px 0px 0px;
   }
 }

@@ -3,13 +3,26 @@ import { useState } from 'react'
 const useExtractFullInfo = ({ moviesToRender, genres }) => {
   const [showInfo, setShowInfo] = useState(false)
   const [info, setInfo] = useState()
+  const divRoot = document.getElementById('root')
 
   const obtainGeneresNames = (generesIDs) => {
     const result = genres.filter(genre => generesIDs.includes(genre.id))
     return result
   }
 
-  const changeShowInfo = ({ id }) => {
+  const changeShowInfo = ({ id, close }) => {
+    if (close) {
+      setShowInfo(false)
+      divRoot.style.filter = 'blur(0px)'
+      divRoot.style.height = 'auto'
+      divRoot.style.overflow = 'static'
+      return
+    }
+
+    divRoot.style.filter = 'blur(10px)'
+    divRoot.style.height = '100vh'
+    divRoot.style.overflow = 'hidden'
+
     const originalMovies = [...moviesToRender]
     const index = originalMovies.findIndex(movie => movie.id === id)
 
@@ -23,10 +36,11 @@ const useExtractFullInfo = ({ moviesToRender, genres }) => {
       overview: movie.overview,
       release__date: movie.release_date,
       vote_average: movie.vote_average,
+      backdrop_path: movie.backdrop_path,
       genresNames
     }
     setInfo(data)
-    setShowInfo(!showInfo)
+    setShowInfo(true)
   }
 
   return {
