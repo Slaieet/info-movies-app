@@ -1,7 +1,7 @@
 import { createPortal } from 'react-dom'
 import { IMG_PATH } from '../../logic/constants.js'
-import closeIcon from '../../icons/close.svg'
 import { useFinalPoster } from '../../customHooks/useFinalPoster.js'
+import Close from '../../icons/components/Close.jsx'
 
 export default function MovieInfo ({ info, changeShowInfo }) {
   const { finalPoster } = useFinalPoster({ info })
@@ -45,10 +45,10 @@ export default function MovieInfo ({ info, changeShowInfo }) {
         </article>
 
         <button
-          className='absolute right-[15px] top-[15px]'
+          className='absolute right-[10px] top-[10px] box-content p-2'
           onClick={() => changeShowInfo({ close: true })}
         >
-          <img src={closeIcon} className='h-[35px]' alt='cerrar' />
+          <Close />
         </button>
       </section>
     </div>,

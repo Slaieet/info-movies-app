@@ -15,6 +15,42 @@ input {
   outline: none;
 }
 
+.close-icon {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  border: 3px solid #b2b2b2;
+  display: grid;
+  place-items: center;
+  position: relative;
+  transition: border-color 0.1s;
+}
+
+.close-icon div {
+  height: 70%;
+  width: 3px;
+  background: #b2b2b2;
+  position: absolute;
+  border-radius: 2px;
+  transition: background 0.2s;
+}
+
+.close-icon:hover {
+  border-color: #fafafa;
+}
+
+.close-icon:hover div {
+  background: #fafafa;
+}
+
+.close-icon div:first-child {
+  transform: rotate(45deg);
+}
+
+.close-icon div:nth-child(2) {
+  transform: rotate(-45deg);
+}
+
 .search-bar {
   transition: border 0.2s;
 }
@@ -98,5 +134,13 @@ input {
 
   .poster {
     border-radius: 12px 12px 0px 0px;
+  }
+
+  .close-icon {
+    border-color: #fff;
+  }
+
+  .close-icon div {
+    background: #fff;
   }
 }
