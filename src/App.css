@@ -15,6 +15,27 @@ input {
   outline: none;
 }
 
+button {
+  border: 0;
+  background: transparent;
+}
+
+.nav-button > div {
+  transition: all 0.2s;
+}
+
+.nav-button:hover div:first-child {
+  transform: rotate(45deg);
+}
+
+.nav-button:hover div:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-button:hover div:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
 .close-icon {
   height: 35px;
   width: 35px;
