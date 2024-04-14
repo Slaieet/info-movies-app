@@ -12,11 +12,10 @@ export default function MovieCard ({ title, qualification, imgEndpoint, changeSh
           src={IMG_PATH + imgEndpoint}
           alt={`Portada de la pelicula "${title}"`}
           className='w-full h-[420px] object-cover rounded-t-[10px]'
-          loading='lazy'
         />
       </header>
       <footer
-        className='h-[100px] bg-darkbgTwo rounded-b-[10px] flex items-center justify-between px-5 movie-card_footer'
+        className='h-[100px] bg-darkbgTwo rounded-b-[10px] flex items-center justify-between px-5 movie-card_footer gap-1'
       >
         <h6 className='font-bold text-[1.2rem]'>{title}</h6>
         <p className='px-2 py-1 bg-darkbg text-[#ffa500] font-bold'>{qualification}</p>

@@ -1,11 +1,8 @@
 import MovieCard from './subcomponents/MovieCard'
 import MovieInfo from './subcomponents/MovieInfo'
-import { useExtractMoviesInfo } from '../customHooks/useExtractMoviesInfo.js'
 import { useExtractFullInfo } from '../customHooks/useExtractFullInfo.js'
 
-export default function MoviesSection () {
-  const { moviesToRender, genres } = useExtractMoviesInfo()
-
+export default function MoviesSection ({ moviesToRender, genres }) {
   const { showInfo, info, changeShowInfo } = useExtractFullInfo({ moviesToRender, genres })
 
   return (

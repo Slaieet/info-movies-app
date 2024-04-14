@@ -1,7 +1,7 @@
 import { API_URL, API_GENRES_LIST } from './constants.js'
 
-export const extractMoviesInfo = async () => {
-  const res = await fetch(API_URL)
+export const extractMoviesInfo = async (url = API_URL) => {
+  const res = await fetch(url)
   const pageOfMovies = await res.json()
   return pageOfMovies
 }
