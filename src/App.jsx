@@ -4,7 +4,7 @@ import MoviesSection from './components/MoviesSection'
 import Sections from './components/Sections.jsx'
 
 import { useExtractMoviesInfo } from './customHooks/useExtractMoviesInfo.js'
-import { useShowSections } from './customHooks/useShowSections.jsx'
+import { useShowSections } from './customHooks/useShowSections.js'
 
 export default function App () {
   const { moviesToRender, genres, changeMoviesRender } = useExtractMoviesInfo()

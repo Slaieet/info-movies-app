@@ -16,7 +16,7 @@ const useExtractFullInfo = ({ moviesToRender, genres }) => {
       setShowInfo(false)
       divRoot.style.filter = 'blur(0px)'
       divRoot.style.height = 'auto'
-      divRoot.style.overflow = 'static'
+      divRoot.style.overflow = 'visible'
       document.documentElement.scrollTop = positionY
       return
     }

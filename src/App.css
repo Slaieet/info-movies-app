@@ -10,6 +10,10 @@
   color-scheme: dark;
 }
 
+#root {
+  overflow: hidden;
+}
+
 body {
   background: #20252C;
   padding: 0 30px;
@@ -180,11 +184,6 @@ button {
   .close-icon div {
     background: #fff;
   }
-}
-
-#root {
-  height: 100vh;
-  overflow: hidden;
 }
 
 .principal-aside {
