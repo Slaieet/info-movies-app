@@ -1,9 +1,11 @@
-export default function NavButton () {
+export default function NavButton ({ toggleSections, mirror = false }) {
   const classNavButton = 'bg-darktext h-[2px] w-full rounded-[5px] origin-left'
+  const classCage = 'flex flex-col h-[14px] w-[18px] justify-between box-content p-[5px]'
 
   return (
     <button
-      className='nav-button flex flex-col h-[16px] w-[20px] justify-between box-content p-[5px]'
+      className={(!mirror) ? `nav-button ${classCage}` : `nav-button-mirror ${classCage}`}
+      onClick={toggleSections}
     >
       <div className={classNavButton} />
       <div className={classNavButton} />

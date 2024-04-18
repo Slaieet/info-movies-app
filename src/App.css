@@ -6,9 +6,13 @@
   font-family: sans-serif;
 }
 
+:root {
+  color-scheme: dark;
+}
+
 body {
   background: #20252C;
-  padding: 0 6%;
+  padding: 0 30px;
 }
 
 input {
@@ -33,6 +37,18 @@ button {
 }
 
 .nav-button:hover div:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.nav-button-mirror div:first-child {
+  transform: rotate(45deg);
+}
+
+.nav-button-mirror div:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-button-mirror div:nth-child(3) {
   transform: rotate(-45deg);
 }
 
@@ -164,4 +180,19 @@ button {
   .close-icon div {
     background: #fff;
   }
+}
+
+#root {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.principal-aside {
+  scrollbar-width: thin;
+  transform: translateX(-250px);
+  transition: transform 0.2s;
+}
+
+.genre {
+  transition: background 0.2s;
 }

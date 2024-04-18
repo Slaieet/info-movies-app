@@ -3,7 +3,7 @@ import sendIcon from '../icons/send.svg'
 
 import NavButton from '../icons/components/NavButton'
 
-export default function Headerr ({ changeMoviesRender }) {
+export default function Headerr ({ changeMoviesRender, toggleSections }) {
   const [search, setSearch] = useState('')
   const [inputActive, setInputActive] = useState(false)
 
@@ -31,7 +31,7 @@ export default function Headerr ({ changeMoviesRender }) {
     <header className='h-[80px] flex justify-between items-center principal-header'>
 
       <div className='flex items-center gap-5'>
-        <NavButton />
+        <NavButton toggleSections={toggleSections} />
 
         <h1 className='font-bold text-[1.5rem]'>Movie App</h1>
       </div>
@@ -48,8 +48,8 @@ export default function Headerr ({ changeMoviesRender }) {
         <img
           src={sendIcon} alt='send'
           className={(inputActive)
-            ? 'h-[25px] absolute right-3 opacity-100 cursor-pointer'
-            : 'h-[25px] absolute right-3 opacity-60 cursor-pointer'}
+            ? 'h-[25px] absolute right-3 inline-block cursor-pointer'
+            : 'hidden'}
           onClick={onClickSend}
         />
       </div>
