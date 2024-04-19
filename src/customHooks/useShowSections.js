@@ -8,7 +8,7 @@ const useShowSections = () => {
 
   const toggleSections = ({ newGenre = false }) => {
     if (newGenre) {
-      refSections.current.style.transform = 'translateX(-250px)'
+      refSections.current.style.transform = 'translateX(-100%)'
       divRoot.style.filter = 'blur(0px)'
       divRoot.style.height = 'auto'
       divRoot.style.overflow = 'visible'
