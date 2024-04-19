@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
 import { extractMoviesInfo, extractGenres } from '../logic/services.js'
-import { API_URL_SEARCH } from '../logic/constants.js'
+import { API_URL, API_URL_SEARCH } from '../logic/constants.js'
 
 const useExtractMoviesInfo = () => {
   const [moviesToRender, setMoviesToRender] = useState()
@@ -26,10 +26,20 @@ const useExtractMoviesInfo = () => {
     })
   }
 
+  const changeMoviesByGenre = ({ genreID }) => {
+    const finalURL = API_URL + `&with_genres=${genreID}`
+    extractMoviesInfo(finalURL).then(res => {
+      setMoviesToRender(res.results)
+    }).catch(err => {
+      console.log(err)
+    })
+  }
+
   return {
     moviesToRender,
     genres,
-    changeMoviesRender
+    changeMoviesRender,
+    changeMoviesByGenre
   }
 }
 

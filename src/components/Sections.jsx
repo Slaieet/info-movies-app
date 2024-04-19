@@ -3,7 +3,7 @@ import Genre from './subcomponents/Genre'
 
 import { createPortal } from 'react-dom'
 
-export default function Sections ({ genres, refSections, toggleSections }) {
+export default function Sections ({ genres, refSections, toggleSections, changeMoviesByGenre }) {
   return createPortal(
     <aside
       className='principal-aside absolute top-0 left-0 h-screen px-[30px] py-[22px] bg-darkbgTwo
@@ -18,7 +18,13 @@ export default function Sections ({ genres, refSections, toggleSections }) {
         <ul className='flex flex-col gap-3'>
           {(genres) && genres.map(genre => {
             return (
-              <Genre key={genre.id} nameGenre={genre.name} />
+              <Genre
+                key={genre.id}
+                nameGenre={genre.name}
+                changeMoviesByGenre={changeMoviesByGenre}
+                genreID={genre.id}
+                toggleSections={toggleSections}
+              />
             )
           })}
         </ul>
