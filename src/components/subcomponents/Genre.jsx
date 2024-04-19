@@ -11,8 +11,8 @@ export default function Genre ({ nameGenre, changeMoviesByGenre, genreID, toggle
       className='py-2 flex gap-2 items-cente rounded-md hover:bg-slate-600 genre cursor-pointer'
       onClick={onSelectGenre}
     >
-      <img src={actionIcon} className='h-[25px]' />
-      <strong>{nameGenre}</strong>
+      <img src={actionIcon} className='h-[28px]' />
+      <strong className='text-[1.1rem]'>{nameGenre}</strong>
     </li>
   )
 }

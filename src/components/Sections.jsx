@@ -18,7 +18,7 @@ export default function Sections ({ genres, refSections, toggleSections, changeM
           <h2 className='font-bold text-[1.5rem]'>Movie App</h2>
         </header>
         <nav>
-          <ul className='flex flex-col gap-3'>
+          <ul className='flex flex-col gap-4'>
             {(genres) && genres.map(genre => {
               return (
                 <Genre
@@ -33,6 +33,7 @@ export default function Sections ({ genres, refSections, toggleSections, changeM
           </ul>
         </nav>
       </aside>
+      <div className='grow' onClick={toggleSections} />
     </div>,
     document.getElementById('aside')
   )

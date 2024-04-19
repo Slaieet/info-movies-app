@@ -32,7 +32,6 @@ export default function Headerr ({ changeMoviesRender, toggleSections }) {
 
       <div className='flex items-center gap-5'>
         <NavButton toggleSections={toggleSections} />
-
         <h1 className='font-bold text-[1.5rem]'>Movie App</h1>
       </div>
 
