@@ -12,7 +12,7 @@ export default function Sections ({ genres, refSections, toggleSections, changeM
     >
       <header className='flex items-center gap-5 pb-5'>
         <NavButton toggleSections={toggleSections} mirror />
-        <h1 className='font-bold text-[1.5rem]'>Movie App</h1>
+        <h2 className='font-bold text-[1.5rem]'>Movie App</h2>
       </header>
       <nav>
         <ul className='flex flex-col gap-3'>

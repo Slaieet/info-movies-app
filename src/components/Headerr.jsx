@@ -28,7 +28,7 @@ export default function Headerr ({ changeMoviesRender, toggleSections }) {
   }
 
   return (
-    <header className='h-[70px] flex justify-between items-center principal-header sticky top-0 bg-darkbg'>
+    <header className='h-[70px] flex justify-between items-center principal-header sticky top-0 bg-darkbg gap-4'>
 
       <div className='flex items-center gap-5'>
         <NavButton toggleSections={toggleSections} />

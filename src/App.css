@@ -195,3 +195,9 @@ button {
 .genre {
   transition: background 0.2s;
 }
+
+@media (width < 530px) {
+  h1 {
+    display: none;
+  }
+}
