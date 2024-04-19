@@ -35,7 +35,8 @@ const useShowSections = () => {
 
   return {
     refSections,
-    toggleSections
+    toggleSections,
+    showSections
   }
 }
 

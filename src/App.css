@@ -188,7 +188,10 @@ button {
 
 .principal-aside {
   scrollbar-width: thin;
-  transform: translateX(-250px);
+}
+
+.container-aside {
+  transform: translateX(-100%);
   transition: transform 0.2s;
 }
 
