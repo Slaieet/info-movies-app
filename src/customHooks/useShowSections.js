@@ -18,12 +18,12 @@ const useShowSections = () => {
 
     if (!showSections) {
       setPositionY(window.scrollY)
-      refSections.current.style.transform = 'translateX(0px)'
+      refSections.current.style.transform = 'translateX(0)'
       divRoot.style.filter = 'blur(10px)'
       divRoot.style.height = '100vh'
       divRoot.style.overflow = 'hidden'
     } else {
-      refSections.current.style.transform = 'translateX(-250px)'
+      refSections.current.style.transform = 'translateX(-100%)'
       divRoot.style.filter = 'blur(0px)'
       divRoot.style.height = 'auto'
       divRoot.style.overflow = 'visible'
