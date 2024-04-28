@@ -12,6 +12,7 @@ export default function MovieCard ({ title, qualification, imgEndpoint, changeSh
           src={IMG_PATH + imgEndpoint}
           alt={`Portada de la pelicula "${title}"`}
           className='w-full h-[420px] object-cover rounded-t-[10px]'
+          loading='lazy'
         />
       </header>
       <footer

@@ -7,14 +7,14 @@ import { useExtractMoviesInfo } from './customHooks/useExtractMoviesInfo.js'
 import { useShowSections } from './customHooks/useShowSections.js'
 
 export default function App () {
-  const { moviesToRender, genres, changeMoviesRender, changeMoviesByGenre } = useExtractMoviesInfo()
+  const { moviesToRender, genres, changeMoviesRender, changeMoviesByGenre, loading } = useExtractMoviesInfo()
   const { refSections, toggleSections } = useShowSections()
 
   return (
     <>
       <Headerr changeMoviesRender={changeMoviesRender} toggleSections={toggleSections} />
       <main>
-        <MoviesSection moviesToRender={moviesToRender} genres={genres} />
+        <MoviesSection moviesToRender={moviesToRender} genres={genres} loading={loading} />
       </main>
       <Sections genres={genres} refSections={refSections} toggleSections={toggleSections} changeMoviesByGenre={changeMoviesByGenre} />
       <Footerr />
