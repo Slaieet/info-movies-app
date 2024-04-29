@@ -7,6 +7,7 @@ const useExtractMoviesInfo = () => {
   const [moviesToRender, setMoviesToRender] = useState()
   const [genres, setGenres] = useState()
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(false)
 
   useEffect(() => {
     Promise.all([extractMoviesInfo(), extractGenres()])
@@ -14,8 +15,8 @@ const useExtractMoviesInfo = () => {
         setMoviesToRender(res[0].results)
         setGenres(res[1])
         setLoading(false)
-      }).catch(error => {
-        console.log(error)
+      }).catch(() => {
+        setError(true)
       })
   }, [])
 
@@ -25,8 +26,8 @@ const useExtractMoviesInfo = () => {
     extractMoviesInfo(finalURL).then(res => {
       setMoviesToRender(res.results)
       setLoading(false)
-    }).catch(err => {
-      console.log(err)
+    }).catch(() => {
+      setError(true)
     })
   }
 
@@ -36,8 +37,8 @@ const useExtractMoviesInfo = () => {
     extractMoviesInfo(finalURL).then(res => {
       setMoviesToRender(res.results)
       setLoading(false)
-    }).catch(err => {
-      console.log(err)
+    }).catch(() => {
+      setError(true)
     })
   }
 
@@ -46,7 +47,8 @@ const useExtractMoviesInfo = () => {
     genres,
     changeMoviesRender,
     changeMoviesByGenre,
-    loading
+    loading,
+    error
   }
 }
 
