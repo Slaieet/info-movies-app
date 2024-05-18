@@ -1,9 +1,12 @@
+import { useExtractMoviesInfo } from '../customHooks/useExtractMoviesInfo'
 import NavButton from '../icons/components/NavButton'
 import Genre from './subcomponents/Genre'
 
 import { createPortal } from 'react-dom'
 
-export default function Sections ({ genres, refSections, toggleSections, changeMoviesByGenre }) {
+export default function Sections ({ refSections, toggleSections }) {
+  const { genres } = useExtractMoviesInfo()
+
   return createPortal(
     <div
       className='container-aside absolute h-screen w-full flex top-0 left-0'
@@ -24,7 +27,6 @@ export default function Sections ({ genres, refSections, toggleSections, changeM
                 <Genre
                   key={genre.id}
                   nameGenre={genre.name}
-                  changeMoviesByGenre={changeMoviesByGenre}
                   genreID={genre.id}
                   toggleSections={toggleSections}
                 />

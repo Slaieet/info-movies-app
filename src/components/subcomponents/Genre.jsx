@@ -1,6 +1,9 @@
+import { useExtractMoviesInfo } from '../../customHooks/useExtractMoviesInfo'
 import genresIcon from '../../icons/genres.svg'
 
-export default function Genre ({ nameGenre, changeMoviesByGenre, genreID, toggleSections }) {
+export default function Genre ({ nameGenre, genreID, toggleSections }) {
+  const { changeMoviesByGenre } = useExtractMoviesInfo()
+
   const onSelectGenre = () => {
     changeMoviesByGenre({ genreID })
     toggleSections({ newGenre: true })

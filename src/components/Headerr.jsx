@@ -2,10 +2,13 @@ import { useState } from 'react'
 import sendIcon from '../icons/send.svg'
 
 import NavButton from '../icons/components/NavButton'
+import { useExtractMoviesInfo } from '../customHooks/useExtractMoviesInfo'
 
-export default function Headerr ({ changeMoviesRender, toggleSections }) {
+export default function Headerr ({ toggleSections }) {
   const [search, setSearch] = useState('')
   const [inputActive, setInputActive] = useState(false)
+
+  const { changeMoviesRender } = useExtractMoviesInfo()
 
   const onClickEnter = (event) => {
     const valueSearch = (event.target.value).trim()
