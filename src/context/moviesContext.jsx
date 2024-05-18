@@ -48,12 +48,23 @@ export const MoviesContextProvider = ({ children }) => {
     })
   }
 
+  const changeMoviesToHome = () => {
+    setLoading(true)
+    extractMoviesInfo().then(res => {
+      setMoviesToRender(res.results)
+      setLoading(false)
+    }).catch(() => {
+      setError(true)
+    })
+  }
+
   return (
     <moviesContext.Provider value={{
       moviesToRender,
       genres,
       changeMoviesRender,
       changeMoviesByGenre,
+      changeMoviesToHome,
       loading,
       error
     }}

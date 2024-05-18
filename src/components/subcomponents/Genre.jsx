@@ -1,11 +1,10 @@
 import { useExtractMoviesInfo } from '../../customHooks/useExtractMoviesInfo'
-import genresIcon from '../../icons/genres.svg'
 
-export default function Genre ({ nameGenre, genreID, toggleSections }) {
-  const { changeMoviesByGenre } = useExtractMoviesInfo()
+export default function Genre ({ nameGenre, genreID, toggleSections, icon }) {
+  const { changeMoviesByGenre, changeMoviesToHome } = useExtractMoviesInfo()
 
   const onSelectGenre = () => {
-    changeMoviesByGenre({ genreID })
+    (genreID) ? changeMoviesByGenre({ genreID }) : changeMoviesToHome()
     toggleSections({ newGenre: true })
   }
 
@@ -14,7 +13,7 @@ export default function Genre ({ nameGenre, genreID, toggleSections }) {
       className='py-2 flex gap-2 items-center rounded-md hover:bg-slate-600 genre cursor-pointer'
       onClick={onSelectGenre}
     >
-      <img src={genresIcon} className='h-[25px] opacity-75' />
+      <img src={icon} className='h-[25px] opacity-75' />
       <strong className='text-[1.1rem]'>{nameGenre}</strong>
     </li>
   )

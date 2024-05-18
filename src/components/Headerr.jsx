@@ -8,7 +8,7 @@ export default function Headerr ({ toggleSections }) {
   const [search, setSearch] = useState('')
   const [inputActive, setInputActive] = useState(false)
 
-  const { changeMoviesRender } = useExtractMoviesInfo()
+  const { changeMoviesRender, changeMoviesToHome } = useExtractMoviesInfo()
 
   const onClickEnter = (event) => {
     const valueSearch = (event.target.value).trim()
@@ -35,7 +35,7 @@ export default function Headerr ({ toggleSections }) {
 
       <div className='flex items-center gap-5'>
         <NavButton toggleSections={toggleSections} />
-        <h1 className='font-bold text-[1.5rem]'>Movie App</h1>
+        <h1 className='font-bold text-[1.5rem] cursor-pointer' onClick={changeMoviesToHome}>Movie App</h1>
       </div>
 
       <div className='h-[40px] w-[270px] relative flex items-center'>

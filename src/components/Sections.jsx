@@ -1,6 +1,8 @@
 import { useExtractMoviesInfo } from '../customHooks/useExtractMoviesInfo'
 import NavButton from '../icons/components/NavButton'
 import Genre from './subcomponents/Genre'
+import genresIcon from '../icons/genres.svg'
+import homeIcon from '../icons/home.svg'
 
 import { createPortal } from 'react-dom'
 
@@ -22,6 +24,12 @@ export default function Sections ({ refSections, toggleSections }) {
         </header>
         <nav>
           <ul className='flex flex-col gap-4'>
+            <Genre
+              nameGenre='Home'
+              toggleSections={toggleSections}
+              icon={homeIcon}
+              genreID={null}
+            />
             {(genres) && genres.map(genre => {
               return (
                 <Genre
@@ -29,6 +37,7 @@ export default function Sections ({ refSections, toggleSections }) {
                   nameGenre={genre.name}
                   genreID={genre.id}
                   toggleSections={toggleSections}
+                  icon={genresIcon}
                 />
               )
             })}
