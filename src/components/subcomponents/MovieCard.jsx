@@ -3,7 +3,6 @@ import addIcon from '../../icons/add.svg'
 import removeIcon from '../../icons/remove.svg'
 import { useSavedMovies } from '../../customHooks/useSavedMovies'
 import { useCallback } from 'react'
-import { isMobile } from 'react-device-detect'
 
 export default function MovieCard ({ title, qualification, imgEndpoint, changeShowInfo, id, movie }) {
   const { toggleMovieToList, checkIfSaved, savedMovies } = useSavedMovies()
@@ -13,7 +12,7 @@ export default function MovieCard ({ title, qualification, imgEndpoint, changeSh
   return (
     <div
       className='w-[300px] cursor-pointer movie-card border-[3px] border-transparent hover:border-darktext
-      rounded-[12px] relative max-h-[526px]'
+      rounded-[12px] relative'
       onClick={() => changeShowInfo({ id })}
     >
       <header className='h-[420px]'>
@@ -31,8 +30,7 @@ export default function MovieCard ({ title, qualification, imgEndpoint, changeSh
         <p className='px-2 py-1 bg-darkbg text-[#ffa500] font-bold'>{qualification}</p>
       </footer>
       <button
-        className='add-icon absolute top-3 left-3 p-1 bg-darkbgTwo rounded-lg hover:bg-darkbg'
-        style={(isMobile) ? { } : { display: 'none' }}
+        className='add-icon absolute top-3 left-3 p-1 bg-darkbgTwo rounded-lg hover:bg-darkbg hidden'
         onClick={(event) => {
           event.stopPropagation()
           toggleMovieToList({ movie })
