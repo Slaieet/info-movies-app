@@ -9,7 +9,7 @@ import { useShowSections } from './customHooks/useShowSections.js'
 import { ListOfMoviesProvider } from './context/savedMoviesContext.jsx'
 
 export default function App () {
-  const { error } = useExtractMoviesInfo()
+  const { error, loading } = useExtractMoviesInfo()
   const { refSections, toggleSections } = useShowSections()
 
   if (error) return <InError />
@@ -21,7 +21,7 @@ export default function App () {
         <MoviesSection />
       </main>
       <Sections refSections={refSections} toggleSections={toggleSections} />
-      <Footerr />
+      {!loading && <Footerr />}
     </ListOfMoviesProvider>
   )
 }

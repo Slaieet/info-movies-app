@@ -9,7 +9,7 @@ export default function MoviesSection () {
   const { showInfo, info, changeShowInfo } = useExtractFullInfo({ moviesToRender, genres })
 
   return (
-    <section className='movies-section min-h-screen'>
+    <section className='movies-section'>
       {loading
         ? <Loader />
         : moviesToRender.map((movie) => {
