@@ -31,7 +31,7 @@ export default function Headerr ({ toggleSections }) {
   }
 
   return (
-    <header className='h-[70px] flex justify-between items-center principal-header sticky top-0 bg-darkbg gap-4'>
+    <header className='h-[70px] flex justify-between items-center principal-header sticky top-0 bg-darkbg gap-4 z-50'>
 
       <div className='flex items-center gap-5'>
         <NavButton toggleSections={toggleSections} />

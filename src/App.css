@@ -147,6 +147,10 @@ button {
   transition: border-color 0.2s;
 }
 
+.movie-card:hover .add-icon {
+  display: block;
+}
+
 @media (width < 1070px) {
   .movies-section {
     justify-content: space-evenly;

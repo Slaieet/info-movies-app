@@ -58,6 +58,10 @@ export const MoviesContextProvider = ({ children }) => {
     })
   }
 
+  const changeMoviesSpecific = ({ movies }) => {
+    setMoviesToRender(movies)
+  }
+
   return (
     <moviesContext.Provider value={{
       moviesToRender,
@@ -65,6 +69,7 @@ export const MoviesContextProvider = ({ children }) => {
       changeMoviesRender,
       changeMoviesByGenre,
       changeMoviesToHome,
+      changeMoviesSpecific,
       loading,
       error
     }}

@@ -3,11 +3,14 @@ import NavButton from '../icons/components/NavButton'
 import Genre from './subcomponents/Genre'
 import genresIcon from '../icons/genres.svg'
 import homeIcon from '../icons/home.svg'
+import listIcon from '../icons/list.svg'
 
 import { createPortal } from 'react-dom'
+import { useSavedMovies } from '../customHooks/useSavedMovies'
 
 export default function Sections ({ refSections, toggleSections }) {
-  const { genres } = useExtractMoviesInfo()
+  const { genres, changeMoviesToHome } = useExtractMoviesInfo()
+  const { showMoviesInList } = useSavedMovies()
 
   return createPortal(
     <div
@@ -28,7 +31,13 @@ export default function Sections ({ refSections, toggleSections }) {
               nameGenre='Home'
               toggleSections={toggleSections}
               icon={homeIcon}
-              genreID={null}
+              otherAction={changeMoviesToHome}
+            />
+            <Genre
+              nameGenre='Guardadas'
+              toggleSections={toggleSections}
+              icon={listIcon}
+              otherAction={showMoviesInList}
             />
             {(genres) && genres.map(genre => {
               return (

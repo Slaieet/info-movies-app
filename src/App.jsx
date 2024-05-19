@@ -6,6 +6,7 @@ import InError from './components/InError.jsx'
 
 import { useExtractMoviesInfo } from './customHooks/useExtractMoviesInfo.js'
 import { useShowSections } from './customHooks/useShowSections.js'
+import { ListOfMoviesProvider } from './context/savedMoviesContext.jsx'
 
 export default function App () {
   const { error } = useExtractMoviesInfo()
@@ -14,13 +15,13 @@ export default function App () {
   if (error) return <InError />
 
   return (
-    <>
+    <ListOfMoviesProvider>
       <Headerr toggleSections={toggleSections} />
       <main>
         <MoviesSection />
       </main>
       <Sections refSections={refSections} toggleSections={toggleSections} />
       <Footerr />
-    </>
+    </ListOfMoviesProvider>
   )
 }

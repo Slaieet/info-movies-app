@@ -1,16 +1,16 @@
 import { useExtractMoviesInfo } from '../../customHooks/useExtractMoviesInfo'
 
-export default function Genre ({ nameGenre, genreID, toggleSections, icon }) {
-  const { changeMoviesByGenre, changeMoviesToHome } = useExtractMoviesInfo()
+export default function Genre ({ nameGenre, genreID, toggleSections, icon, otherAction }) {
+  const { changeMoviesByGenre } = useExtractMoviesInfo()
 
   const onSelectGenre = () => {
-    (genreID) ? changeMoviesByGenre({ genreID }) : changeMoviesToHome()
+    (!otherAction) ? changeMoviesByGenre({ genreID }) : otherAction()
     toggleSections({ newGenre: true })
   }
 
   return (
     <li
-      className='py-2 flex gap-2 items-center rounded-md hover:bg-slate-600 genre cursor-pointer'
+      className='py-2 flex gap-2 items-center rounded-md hover:bg-slate-600 genre cursor-pointer px-1'
       onClick={onSelectGenre}
     >
       <img src={icon} className='h-[25px] opacity-75' />

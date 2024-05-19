@@ -21,6 +21,7 @@ export default function MoviesSection () {
               qualification={movie.vote_average}
               imgEndpoint={movie.poster_path}
               changeShowInfo={changeShowInfo}
+              movie={movie}
             />
           )
         })}
