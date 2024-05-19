@@ -37,10 +37,16 @@ export const ListOfMoviesProvider = ({ children }) => {
     changeMoviesSpecific({ movies: savedMovies })
   }
 
+  const checkIfSaved = ({ id }) => {
+    return savedMovies.some(item => item.id === id)
+  }
+
   return (
     <savedMoviesContext.Provider value={{
       showMoviesInList,
-      toggleMovieToList
+      toggleMovieToList,
+      checkIfSaved,
+      savedMovies
     }}
     >
       {children}

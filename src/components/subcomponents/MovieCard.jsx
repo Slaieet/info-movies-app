@@ -1,9 +1,14 @@
 import { IMG_PATH } from '../../logic/constants'
 import addIcon from '../../icons/add.svg'
+import removeIcon from '../../icons/remove.svg'
 import { useSavedMovies } from '../../customHooks/useSavedMovies'
+import { useCallback } from 'react'
+import { isMobile } from 'react-device-detect'
 
 export default function MovieCard ({ title, qualification, imgEndpoint, changeShowInfo, id, movie }) {
-  const { toggleMovieToList } = useSavedMovies()
+  const { toggleMovieToList, checkIfSaved, savedMovies } = useSavedMovies()
+
+  const isSaved = useCallback(checkIfSaved({ id }), [savedMovies])
 
   return (
     <div
@@ -26,13 +31,14 @@ export default function MovieCard ({ title, qualification, imgEndpoint, changeSh
         <p className='px-2 py-1 bg-darkbg text-[#ffa500] font-bold'>{qualification}</p>
       </footer>
       <button
-        className='add-icon absolute top-3 left-3 p-1 bg-darkbgTwo rounded-lg hidden hover:bg-darkbg'
+        className='add-icon absolute top-3 left-3 p-1 bg-darkbgTwo rounded-lg hover:bg-darkbg'
+        style={(isMobile) ? { } : { display: 'none' }}
         onClick={(event) => {
           event.stopPropagation()
           toggleMovieToList({ movie })
         }}
       >
-        <img src={addIcon} alt='Guardar' className='h-6' />
+        <img src={(isSaved) ? removeIcon : addIcon} alt={(isSaved ? 'Guardar' : 'Eliminar')} className='h-6' />
       </button>
     </div>
   )
