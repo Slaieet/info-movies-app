@@ -14,7 +14,7 @@ export default function MovieCard ({ title, qualification, imgEndpoint, changeSh
     <div
       className='w-[300px] cursor-pointer movie-card border-[3px] border-transparent hover:border-darktext
       rounded-[12px] relative'
-      onClick={() => changeShowInfo({ id })}
+      onClick={() => changeShowInfo({ movie })}
     >
       <header className='h-[420px]'>
         <img

@@ -6,7 +6,7 @@ import { useExtractMoviesInfo } from '../customHooks/useExtractMoviesInfo.js'
 
 export default function MoviesSection () {
   const { moviesToRender, genres, loading } = useExtractMoviesInfo()
-  const { showInfo, info, changeShowInfo } = useExtractFullInfo({ moviesToRender, genres })
+  const { showInfo, info, changeShowInfo } = useExtractFullInfo({ genres })
 
   return (
     <section className='movies-section'>

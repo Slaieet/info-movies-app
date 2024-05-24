@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const useExtractFullInfo = ({ moviesToRender, genres }) => {
+const useExtractFullInfo = ({ genres }) => {
   const [showInfo, setShowInfo] = useState(false)
   const [info, setInfo] = useState()
   const divRoot = document.getElementById('root')
@@ -11,7 +11,7 @@ const useExtractFullInfo = ({ moviesToRender, genres }) => {
     return result
   }
 
-  const changeShowInfo = ({ id, close }) => {
+  const changeShowInfo = ({ movie, close }) => {
     if (close) {
       setShowInfo(false)
       divRoot.style.filter = 'blur(0px)'
@@ -26,11 +26,6 @@ const useExtractFullInfo = ({ moviesToRender, genres }) => {
     divRoot.style.filter = 'blur(10px)'
     divRoot.style.height = '100vh'
     divRoot.style.overflow = 'hidden'
-
-    const originalMovies = [...moviesToRender]
-    const index = originalMovies.findIndex(movie => movie.id === id)
-
-    const movie = originalMovies[index]
 
     const genresNames = obtainGeneresNames(movie.genre_ids)
 
