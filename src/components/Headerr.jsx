@@ -41,8 +41,8 @@ export default function Headerr ({ toggleSections }) {
       <div className='h-[40px] w-[270px] relative flex items-center'>
         <input
           type='text'
-          className='h-full w-full bg-darkbgTwo rounded-[20px] px-4 flex items-center border-[2px]
-          border-solid border-transparent focus:border-darktext search-bar pb-[1px]'
+          className='h-full w-full bg-darkbgTwo rounded-[20px] pl-4 flex items-center border-[2px]
+          border-solid border-transparent focus:border-darktext search-bar pb-[1px] pr-11'
           placeholder='Buscar'
           onKeyUp={onClickEnter}
           onChange={onChangeSearchValue}
